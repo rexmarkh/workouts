@@ -1,0 +1,42 @@
+.acc-sel .dropdown-menu {
+    left: auto !important;
+}
+
+.header.navbar.navbar-inverse.navbar-fixed-top {
+    background-color: transparent !important;
+    border-color: transparent !important;
+}
+
+.dropdown-toggle:hover,
+.dropdown-toggle:focus {
+    text-decoration: none !important;
+}
+
+.page-sidebar.nav-collapse.collapse {
+    display: block !important;
+}
+
+.container {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+button.btn.btn-primary {
+    color: #ffffff;
+    background-color: #337ab7 !important;
+    border-color: #2e6da4 !important;
+}
+
+button.btn.btn-primary:hover {
+    background-color: #337ab7 !important;
+}
+
+.progress {
+    height: 10px !important;
+}
+
+.progress-striped.active .progress-bar {
+    -webkit-animation: progress-bar-stripes 2s linear infinite !important;
+    -o-animation: progress-bar-stripes 2s linear infinite !important;
+    animation: progress-bar-stripes 2s linear infinite !important;
+}

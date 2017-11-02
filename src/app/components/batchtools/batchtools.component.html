@@ -1,0 +1,59 @@
+<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+    <h4>{{steps}}</h4>
+</div>
+<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 progress-tab">
+    <div class="row">
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+            <h6 class="active" id="upload_title">UPLOAD</h6>
+        </div>
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+            <h6 id="validate_title">VALIDATE</h6>
+        </div>
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+            <h6>RESULT</h6>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="upload_excel border-all" *ngIf="uploadElementvisible">
+            <span>Upload Subscribers List:</span>
+            <fa name="upload" class="upload-icon"></fa>
+            <ng2-file-input (click)="appearInput(visible)" extensions="['excel/xlsx']" (onAdded)="onAdded($event)" (onAction)="onAction($event)"></ng2-file-input>
+            <!-- <button type="button" class="btn btn-primary"> <fa name="upload"></fa> Upload File</button> -->
+            <button (click)="myEvent()" type="button" class="btn btn-default disabled"><fa name="download"></fa>Download Template</button>
+        </div>
+
+        <div class="border-all" [hidden]="!isVisible">
+            <progressbar class="progress-striped active" [max]="max" [value]="dynamic">
+            </progressbar>
+            <div class="p-20">
+                <div class=" align_center">
+                    <p class="ng-8-file-input-file-text">File Name: {{file_name}}</p>
+                    <p class="text-primary">{{status}}</p>
+                </div>
+                <!-- <div>
+                    <alert type="danger">
+                        <strong><fa name="exclamation-triangle"></fa></strong> Change a few things up and try submitting again.
+                    </alert>
+                </div>-->
+                <div [hidden]="errorVisible">
+                    <div class=" align_center">
+                        <span>There are minor errors in the following optional fields.</span>
+                        <button type="button" class="btn btn-primary" (click)="triggerDownload(event);">Download Report</button>
+                    </div>
+                    <div class="border-all p-20 align_center">
+                        <span class="text-danger">{{users}} users were not found in the selected aggregate.</span>
+                        <button type="button" (click)="ignoreErrors(event);" class="btn btn-primary">Ignore</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div [hidden]="!isVisible" class="align_left border-all">
+            <button type="button" (click)="validateFile(event);" [disabled]="isValid" id="validation_button" class="btn btn-primary pull-right">{{continue_btn_name}}</button>
+            <button type="button" class="btn btn-default invisible">Cancel</button>
+            <button type="button" (click)="cancelProgress(event);" class="btn btn-default pull-right">Cancel</button>
+
+        </div>
+    </div>
+</div>

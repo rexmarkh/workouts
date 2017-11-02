@@ -1,0 +1,27 @@
+<fa name="cogs" size="4x"></fa>
+<p>
+    {{companyName}}
+</p>
+<h3>
+    {{pageTitle}}
+</h3>
+
+<button (click)="this.fetchData()">Call API Service</button>
+<div *ngIf="this.jsonData && this.jsonData.contacts">
+    <div ngShow="this.jsonData && this.jsonData.contacts">
+        <thead>
+            <tr>
+                <th *ngFor="let key of objectKeys(this.jsonData.contacts[0])">{{key}}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let contact of this.jsonData.contacts">
+                <td *ngFor="let key of objectKeys(contact)">
+                    {{contact[key]}}
+                </td>
+                <!-- <div *ngFor="let key of objectKeys(contact)">{{key + ' : ' + contact[key]}}</div> -->
+
+            </tr>
+        </tbody>
+    </div>
+</div>

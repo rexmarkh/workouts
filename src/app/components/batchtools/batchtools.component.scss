@@ -1,0 +1,85 @@
+h4 {
+    color: #999999;
+}
+
+.upload-icon {
+    position: relative;
+    top: 0px;
+    color: #fff;
+    left: 30px;
+    cursor: pointer;
+}
+
+.progress-tab {
+    h6 {
+        padding-top: 5px;
+        border-top: 5px solid #ccc;
+        font-size: 12px;
+    }
+    .active {
+        border-color: #33ACE2;
+    }
+    .row {
+        div:nth-child(1) {
+            text-align: left;
+        }
+        div:nth-child(2) {
+            text-align: center;
+        }
+        div:nth-child(3) {
+            text-align: right;
+        }
+    }
+}
+
+.border-all {
+    border: 1px solid #ccc;
+    .text-primary {
+        font-weight: bold !important;
+    }
+    .align_center {
+        p:first-child {
+            color: #999999;
+            font-size: 15px;
+            margin-left: 150px;
+        }
+        p:last-child {
+            margin-top: -90px;
+        }
+    }
+}
+
+.upload_excel {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    & span,
+    button {
+        margin: 0 8px;
+    }
+}
+
+.align_center {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.align_left {
+    // display: flex;
+    width: 100%;
+    // justify-content: flex-end;
+    // align-items: center;
+    padding: 10px;
+    background-color: #F5F5F5;
+    button {
+        margin-left: 10px;
+    }
+}
+
+.p-20 {
+    padding: 20px;
+}
